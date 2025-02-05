@@ -1,0 +1,265 @@
+/* Adding space inside of an element, which is usful when element has 
+background color or a border on the element; then always use padding.
+
+For creating space outside of an eleement or in-between elements, use
+margin. It is recommanded to use margin-bottom, when you want to add
+vertical space. 
+
+Bottom margin of top element and top margin of bottom element overlap 
+with one another.
+ */
+* {
+  /* Universal Selector */
+  /* Universal selector applies to all the elements. 
+  There is no inheritance involved. 
+  Any style applied in Body gets inherited. */
+  /* border: solid; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Not all properties get inherited. Its mostly once related to text */
+/* font-family, font-size, font-weight, font-style, color */
+/* line-height, lettter-spacing, text-align, text-transform */
+/* text-shadow, list-style, etc */
+
+/* PAGE SECTIONS */
+body {
+  color: #444;
+  font-family: sans-serif;
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 50px;
+  /* height: 80px; */
+}
+.post-header {
+  margin-bottom: 30px;
+}
+.post-image {
+  height: auto;
+  width: 100%;
+}
+nav {
+  font-size: 18px;
+}
+article {
+  margin-bottom: 60px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 40px;
+}
+
+/* SMALL ELEMENTS */
+h1,
+h2,
+h3 {
+  color: #1098ad; /* Override inherited style*/
+}
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+#Copyright {
+  font-size: 12px;
+}
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+.related {
+  list-style: none;
+  margin-left: 0;
+}
+
+ol,
+ul {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+li:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+li:last-child {
+  font-style: italic;
+  margin-bottom: 0;
+}
+/* li:nth-child(odd) {
+  color: red;
+} */
+article p:last-child {
+  color: black;
+}
+/* Styling links */
+/* Specifying psudo-class :link targets links with href attributes */
+/* Styling for link is advised to be in order link, visited, hover and active [LVHA}*/
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  color: #1098ad;
+}
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline;
+}
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+/* Header Navigation links - Blog, Challenges, Flexbox, CSS Grid */
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin: 10px 20px;
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Descendant Combinator */
+nav a:link:last-child {
+  margin: 0;
+}
+/* End - Header Navigation Links */
+
+/* Like button at bottom right of Body element */
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  bottom: 50px;
+  right: 50px;
+  position: absolute;
+}
+/* End - Like button */
+
+/* Psudo Element - Book icon in Header [The code magazine] */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+/* 
+h2::first-letter {
+  font-size: 80px;
+} */
+
+/* Adjacent Seleector OR Next Sibling Combinator  */
+h3 + p::first-line {
+  color: black;
+}
+
+/* After and Before Pseudo-elements */
+/* By default, any pseudo-element is an inline element. 
+  Padding or margin to apply, use box model using -  display: inline-block */
+h2 {
+  /* background-color: orange; */
+  position: relative;
+}
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  padding: 5px 5px;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+/* End - Psudo Element - Header [The code magazine]  */
+/* Resolving Conflicts */
+/* #Copyright {
+  color: red;
+}
+.Copyright {
+  color: blue;
+}
+.text {
+  color: yellow;
+}
+footer p {
+  color: green;
+} */
+/* FLOATS */
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  clear: both;
+}
